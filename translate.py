@@ -68,10 +68,10 @@ class translate:
             return output
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Convert english to runes')
+    parser = argparse.ArgumentParser(description='Substitute cipher based off of a dictionary.')
     group = parser.add_mutually_exclusive_group(required=True)
     group.add_argument('input_string', type=str, nargs='?', default=None, help='Input string to be translated.')
-    group.add_argument('-l', '--list', action='store_true', default=False, help='List all avaliable dictionaries.')
+    group.add_argument('-l', '--list', action='store_true', default=False, help='List all available dictionaries.')
     parser.add_argument('-r', '--reverse', action='store_true', default=False, help='Convert translated string back.')
     parser.add_argument('-u', '--use_case', action='store_true', default=False, help='Do not ignore capitalization of letters.')
     parser.add_argument('-D', '--dir', type=str, default='dictionaries', help='Path of dictionaries directory.')
