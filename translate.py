@@ -1,10 +1,9 @@
 import os
 import argparse
-import string
 
 class translate:
     def __init__(self, inputString):
-        output = self.toRunes(inputString)
+        output = self.toRunes(inputString.upper())
         print(output)
 
     def toRunes(self, english):
@@ -17,19 +16,21 @@ class translate:
                 second = english[n + 1]
             else:
                 second = None
-            if string.ascii_uppercase.find(char) != -1:
-                for line in csv.split('\n'):
-                    i = line.split(',')
-                    if i[0].find(char) == 0:
-                        if len(i[0]) == 2:
-                            if second is not None and i[0].rfind(second) == 1:
-                                rune += i[1]
-                                n += 1
-                                break
-                        else:
+            found = False
+            for line in csv.split('\n'):
+                i = line.split(',')
+                if i[0].find(char) == 0:
+                    if len(i[0]) == 2:
+                        if second is not None and i[0].rfind(second) == 1:
                             rune += i[1]
+                            n += 1
+                            found = True
                             break
-            else:
+                    else:
+                        rune += i[1]
+                        found = True
+                        break
+            if not found:
                 rune += char
             n += 1
         return rune
