@@ -1,5 +1,4 @@
-### Format ###
-----
+# Format #
 The dictionaries use standard csv formatting and extensions.
 ----
 |Input String|Output String|Notes|
