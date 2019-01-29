@@ -7,7 +7,7 @@ class translate:
         print(output)
 
     def toRunes(self, english):
-        csv = self.openCSV("dictionary/runes.csv")
+        csv = self.openCSV("dictionaries/runes.csv")
         rune = ''
         n = 0
         while n < len(english):
