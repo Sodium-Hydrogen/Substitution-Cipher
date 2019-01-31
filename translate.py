@@ -3,7 +3,8 @@ import argparse
 
 class translate:
     def __init__(self, directory, file):
-        self.directory = directory.replace('/', '')
+        self.directory = directory + '/'
+        self.directory = self.directory.replace("//", '/')
         self.filePath = self.directory + "/" + file
 
     def openCSV(self):
