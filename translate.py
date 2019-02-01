@@ -5,12 +5,8 @@ class translate:
     def __init__(self, directory, file):
         self.directory = directory + '/'
         self.directory = self.directory.replace("//", '/')
-<<<<<<< HEAD
         self.filePath = self.directory + file
         print(self.filePath)
-=======
-        self.filePath = self.directory + "/" + file
->>>>>>> 8c66aeec19adf7311660b5c878b0a7fcf8683809
 
     def openCSV(self):
         if os.path.exists(self.filePath):
